@@ -2,6 +2,9 @@
 import { readFile } from 'fs/promises';
 import jwt from 'jsonwebtoken';
 
+const args = process.argv.slice(2);
+const sub = args[0];
+
 // Load private key from PEM file
 const privateKey = await readFile('private.pem', 'utf8');
 const keyText = await readFile('key.json', 'utf8');
@@ -26,6 +29,6 @@ function generateJWT(sub) {
   return token;
 }
 
-const sub = 'user@example.com';
 const token = generateJWT(sub);
-console.log('Generated JWT:', token);
+
+console.log(token);
