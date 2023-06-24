@@ -12,7 +12,6 @@
   "dependencies": {
     "jose": "^4.14.4",
     "jsonwebtoken": "^9.0.0",
-    "pem-jwk": "^2.0.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
