@@ -1,0 +1,23 @@
+{
+  "name": "jwk-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jose": "^4.14.4",
+    "jsonwebtoken": "^9.0.0",
+    "pem-jwk": "^2.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/pem-jwk": "^2.0.0",
+    "@types/uuid": "^9.0.2"
+  }
+}
