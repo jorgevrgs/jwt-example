@@ -1,9 +1,19 @@
 
 import { readFile } from 'fs/promises';
 import jwt from 'jsonwebtoken';
+import yargs from 'yargs';
 
-const args = process.argv.slice(2);
-const sub = args[1];
+const argv = yargs(process.argv.slice(2))
+  .option('sub', {
+    describe: 'Sub to sign',
+    type: 'string',
+    demandOption: true,
+  })
+  .help()
+  .argv;
+
+const sub = argv.sub;
+
 
 // Load private key from PEM file
 const privateKey = await readFile('private.pem', 'utf8');
