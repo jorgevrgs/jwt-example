@@ -1,5 +1,11 @@
 # JWT Examples
 
+## Getting Started
+
+```sh
+npm ci
+```
+
 ## Generate
 
 Generate files:
