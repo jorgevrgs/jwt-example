@@ -26,7 +26,9 @@ Start the server for `http://localhost:3000/key.json`
 node server.cjs
 ```
 
-## Sign
+## Sign And Verify
+
+### Sign
 
 Sign a sub to generate a JWT:
 
@@ -34,7 +36,7 @@ Sign a sub to generate a JWT:
 node sign.mjs --sub user@example.com
 ```
 
-## Verify
+### Verify
 
 Verify the generated token using the server key.json:
 
@@ -42,7 +44,7 @@ Verify the generated token using the server key.json:
 node verify.mjs --jwt XXX
 ```
 
-## All-in-one
+### All-in-one
 
 Run the sign-verify steps:
 
