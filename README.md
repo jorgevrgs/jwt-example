@@ -12,6 +12,14 @@ Generate files:
 node generate.mjs
 ```
 
+## Server
+
+Start the server for `http://localhost:3000/key.json`
+
+```sh
+node server.cjs
+```
+
 ## Sign
 
 Sign a sub to generate a JWT:
