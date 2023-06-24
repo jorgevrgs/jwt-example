@@ -3,7 +3,7 @@ import { readFile } from 'fs/promises';
 import jwt from 'jsonwebtoken';
 
 const args = process.argv.slice(2);
-const sub = args[0];
+const sub = args[1];
 
 // Load private key from PEM file
 const privateKey = await readFile('private.pem', 'utf8');
