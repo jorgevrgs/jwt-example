@@ -49,6 +49,6 @@ node verify.mjs --jwt XXX
 Run the sign-verify steps:
 
 ```sh
-node sign.mjs --sub user@example.com | node verify.mjs --jwt "$(</dev/stdin)"
+node sign.mjs --sub user@example.com | node verify.mjs
 ```
 
