@@ -1,6 +1,6 @@
-import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { createRemoteJWKSet, jwtVerify } from 'jose';
 import yargs from 'yargs';
-
+import { audience, issuer, jwkUrl } from './constants.mjs';
 
 function readJwtFromPipe() {
   return new Promise((resolve, reject) => {
@@ -28,19 +28,18 @@ function readJwtFromPipe() {
 const argv = yargs(process.argv.slice(2))
   .option('jwt', {
     describe: 'JWT to verify',
-    type: 'string'
+    type: 'string',
   })
-  .help()
-  .argv;
+  .help().argv;
 
-const jwt = argv.jwt || await readJwtFromPipe();
+const jwt = argv.jwt || (await readJwtFromPipe());
 
-const JWKS = createRemoteJWKSet(new URL('http://localhost:3000/key.json'));
+const JWKS = createRemoteJWKSet(jwkUrl);
 
 const { payload, protectedHeader } = await jwtVerify(jwt, JWKS, {
-  issuer: 'urn:example:issuer',
-  audience: 'urn:example:audience',
+  issuer,
+  audience,
 });
 
 console.log('protectedHeadr', protectedHeader);
-console.log('payload', payload) ;
+console.log('payload', payload);

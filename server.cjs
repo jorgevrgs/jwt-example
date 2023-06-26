@@ -1,15 +1,14 @@
+import { jwkPathname, port } from './constants.mjs';
 
 const fs = require('fs');
 const http = require('http');
-
-const port = 3000;
 
 // Read the key.json file
 const keyData = fs.readFileSync('key.json', 'utf8');
 
 // Create the HTTP server
 const server = http.createServer((req, res) => {
-  if (req.url === '/key.json') {
+  if (req.url === jwkPathname) {
     res.writeHead(200, {
       'Content-Type': 'application/json',
     });
